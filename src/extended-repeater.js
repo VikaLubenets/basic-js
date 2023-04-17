@@ -23,18 +23,21 @@ function repeater(str, options) {
   let addition = String(options.addition) || '';
   let additionNum = options.additionRepeatTimes || 1;
   let addSeparator = options.additionSeparator || '|';
-  let addStr = "";
   let result = "";
 
-  for(let i = 0; i < repeatNum - 1; i++){
-    for(let j = 0; j < additionNum - 1; j++){
-      addStr += (addition + addSeparator);
+  for (let i = 0; i < repeatNum; i++) {
+    let addStr = "";
+    for (let j = 0; j < additionNum; j++) {
+      addStr += addition;
+      if (j < additionNum - 1) {
+        addStr += addSeparator;
+      }
     }
-    addStr += addition;
-    result += string + addStr + separator;
+    result += string + addStr;
+    if (i < repeatNum - 1) {
+      result += separator;
+    }
   }
-
-  result += string + addStr;
 
   return result;
 
