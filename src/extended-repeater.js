@@ -20,14 +20,14 @@ function repeater(str, options) {
   let string = String(str);
   let repeatNum = options.repeatTimes || 1;
   let separator = options.separator || '+';
-  let addition = String(options.addition);
+  let addition = String(options.addition) || '';
   let additionNum = options.additionRepeatTimes || 1;
   let addSeparator = options.additionSeparator || '|';
   let addStr = "";
   let result = "";
 
-  for(let i = 0; i < repeatNum; i++){
-    for(let j = 0; j < additionNum; j++){
+  for(let i = 0; i < repeatNum - 1; i++){
+    for(let j = 0; j < additionNum - 1; j++){
       addStr += (addition + addSeparator);
     }
     addStr += addition;
