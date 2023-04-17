@@ -20,7 +20,7 @@ function repeater(str, options) {
   let string = String(str);
   let repeatNum = options.repeatTimes || 1;
   let separator = options.separator || '+';
-  let addition = String(options.addition) || '';
+  let addition = options.addition !== undefined ? String(options.addition) : '';
   let additionNum = options.additionRepeatTimes || 1;
   let addSeparator = options.additionSeparator || '|';
   let result = "";
